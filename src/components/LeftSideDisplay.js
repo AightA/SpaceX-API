@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 export default function LeftSideDisplay() {
 	return (
 		<div>
-			<Container fluid>
+			<Container fluid={true}>
 				<Row className="no-gutters">
 					<Col>
 						<div>

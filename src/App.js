@@ -11,7 +11,7 @@ function App() {
 		<p>Loading...</p>
 	) : (
 		<div className="App">
-			<Container fluid>
+			<Container fluid={true}>
 				<Row className="no-gutters">
 					<Col>
 						<LeftSideDisplay />
