@@ -11,9 +11,8 @@ function App() {
 		<p>Loading...</p>
 	) : (
 		<div className="App">
-			<Container>
-				<> </>
-				<Row>
+			<Container fluid>
+				<Row className="no-gutters">
 					<Col>
 						<LeftSideDisplay />
 					</Col>

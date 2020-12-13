@@ -37,3 +37,14 @@
 		transform: rotate(360deg);
 	}
 }
+
+.grid {
+	min-height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.inputBox {
+	width: 30%;
+}

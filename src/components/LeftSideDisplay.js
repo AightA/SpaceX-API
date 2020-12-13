@@ -4,8 +4,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 export default function LeftSideDisplay() {
 	return (
 		<div>
-			<Container>
-				<Row>
+			<Container fluid>
+				<Row className="no-gutters">
 					<Col>
 						<div>
 							<h1>Space X</h1>
