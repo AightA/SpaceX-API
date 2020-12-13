@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LeftSideDisplay from './components/LeftSideDisplay';
+import LaunchListDisplay from './components/LaunchListDisplay';
+import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 function App() {
-	return (
+	const [isLoading, setIsLoading] = useState(false);
+
+	return isLoading ? (
+		<p>Loading...</p>
+	) : (
 		<div className="App">
-			<h1> main page </h1>
+			<Container>
+				<> </>
+				<Row>
+					<Col>
+						<LeftSideDisplay />
+					</Col>
+					<Col>
+						<LaunchListDisplay />
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 }
