@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LeftSideDisplay from './components/LeftSideDisplay';
 import LaunchListDisplay from './components/LaunchListDisplay';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 function App() {
-	const [isLoading, setIsLoading] = useState(false);
-
-	return isLoading ? (
-		<p>Loading...</p>
-	) : (
+	return (
 		<div className="App">
 			<Container fluid={true}>
 				<Row className="no-gutters">
