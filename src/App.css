@@ -62,13 +62,14 @@
 
 .orderByYearBtn {
 	position: relative;
-	left: 215px !important;
-	top: 79px !important;
+	left: 205px !important;
+	top: 78px !important;
 	background-color: #215184 !important;
 	color: white !important;
 }
 .sortBtn {
 	position: relative;
+	display: inline;
 	right: -350px;
 	margin-top: 40px;
 	background-color: #215184 !important;

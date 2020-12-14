@@ -9,6 +9,7 @@ import sort from '../assets/icon/sort.png';
 
 export default function LaunchListDisplay() {
 	const [list, setList] = useState([]);
+	const [orderList, setOrderList] = useState(['Descending']);
 	const [searchByYear, setSearchByYear] = useState([]);
 	const [filterList, setFilteredList] = useState([]);
 	const [isLatestFirst, setIsLatestFirst] = useState(false);
@@ -49,8 +50,10 @@ export default function LaunchListDisplay() {
 		const newSortedList = list;
 		if (!isLatestFirst) {
 			newSortedList.sort((a, b) => a.launch_date_utc < b.launch_date_utc);
+			setOrderList(['  Ascending']);
 		} else {
 			newSortedList.sort((a, b) => a.launch_date_utc > b.launch_date_utc);
+			setOrderList(['Descending']);
 		}
 		setIsLatestFirst(!isLatestFirst);
 		setFilteredList(newSortedList);
@@ -63,12 +66,7 @@ export default function LaunchListDisplay() {
 					<Col md={12}>
 						<Button className="reloadBtn" onClick={reloadList}>
 							Reload Data
-							<img
-								className="img"
-								src={refresh}
-								alt="reload icon"
-								aria-hidden="true"
-							/>
+							<img className="img" src={refresh} alt="reload icon" />
 						</Button>
 					</Col>
 				</Row>
@@ -78,20 +76,10 @@ export default function LaunchListDisplay() {
 							dropDownList={searchByYear}
 							selectedYearUpdated={getListByYear}
 						/>
-						<img
-							className="img"
-							src={select}
-							alt="filter by year"
-							aria-hidden="true"
-						/>
+						<img className="img" src={select} alt="filter by year" />
 						<Button className="sortBtn" onClick={toggleSortListByDate}>
-							Sort by date
-							<img
-								className="img"
-								src={sort}
-								alt="sort by date"
-								aria-hidden="true"
-							/>
+							Sort {orderList}
+							<img className="img" src={sort} alt="sort by date" />
 						</Button>
 					</Col>
 				</Row>
