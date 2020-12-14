@@ -32,4 +32,7 @@ This is a React SPA application [Open source SpaceX REST API](https://github.com
 
 ## App Preview
 
-![Front page](https://pasteboard.co/JEPA597.png)
+Front page
+![SpaceX-API-React-App](https://user-images.githubusercontent.com/34037526/102040572-18de3700-3dc5-11eb-85c5-67b8f03c0fe0.png)
+
+
