@@ -22,9 +22,10 @@ This is a React SPA application [Open source SpaceX REST API](https://github.com
 
 1. Use Axios instead of Fetch
 2. Organize components structure
-3. Refactor the code
-4. Add tests
-5. Include more Accessibility options
+3. Use Redux or Context to share data values
+4. Refactor the code
+5. Add tests
+6. Include more Accessibility options
 
 ## Deployed on netlify
 
@@ -32,4 +33,7 @@ This is a React SPA application [Open source SpaceX REST API](https://github.com
 
 ## App Preview
 
-![Front page](https://pasteboard.co/JEPA597.png)
+Front page
+![SpaceX-API-React-App](https://user-images.githubusercontent.com/34037526/102040572-18de3700-3dc5-11eb-85c5-67b8f03c0fe0.png)
+
+
