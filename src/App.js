@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import LeftSideDisplay from './components/LeftSideDisplay';
 import LaunchListDisplay from './components/LaunchListDisplay';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Card, Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 function App() {
 	const [isLoading, setIsLoading] = useState(false);
-	const [error, setError] = useState('');
+
 	return isLoading ? (
 		<p>Loading...</p>
 	) : (

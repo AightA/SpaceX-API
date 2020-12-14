@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FetchedAPI } from '../FetchedAPI';
-import moment from 'moment';
+import ListCard from './ListCard';
+import refresh from '../assets/icon/refresh.png';
+import select from '../assets/icon/select.png';
+import sort from '../assets/icon/sort.png';
 
 export default function LaunchListDisplay() {
 	const [list, setList] = useState([]);
@@ -21,7 +24,7 @@ export default function LaunchListDisplay() {
 	}, []);
 
 	// Reload list from API
-	let reloadList = () => {
+	const reloadList = () => {
 		let loaded = true;
 		FetchedAPI().then((listItems) => {
 			if (loaded) {
@@ -41,7 +44,7 @@ export default function LaunchListDisplay() {
 	}, [searchByYear, list]);
 
 	// sort list by date - using sort method
-	let toggleSortListByDate = () => {
+	const toggleSortListByDate = () => {
 		const newSortedList = list;
 		if (!isLatestFirst) {
 			newSortedList.sort((a, b) => a.launch_date_utc < b.launch_date_utc);
@@ -52,68 +55,70 @@ export default function LaunchListDisplay() {
 		setFilteredList(newSortedList);
 	};
 
-	const listCard = (item) => {
-		return (
-			<div>
-				<Container fluid={true} className="cardBox">
-					<Row className="  no-gutters">
-						<Col md={4} className="text-left p-2">
-							{item.mission_name}
-						</Col>
-						<Col md={{ span: 4, offset: 4 }} className="text-right p-1">
-							{moment(item.launch_date_utc).format('Do MMM YYYY') + ' '}
-						</Col>
-						<Col md={{ span: 6, offset: 6 }} className="text-right p-3">
-							{item.rocket.rocket_name}
-						</Col>
-					</Row>
-				</Container>
-			</div>
-		);
-	};
+	// const listCard = (item) => {
+	// 	return (
+	// 		<div>
+	// 			<Container fluid={true} className="cardBox">
+	// 				<Row className="  no-gutters">
+	// 					<Col md={4} className="text-left p-2">
+	// 						{item.mission_name}
+	// 					</Col>
+	// 					<Col md={{ span: 4, offset: 4 }} className="text-right p-1">
+	// 						{moment(item.launch_date_utc).format('Do MMM YYYY') + ' '}
+	// 					</Col>
+	// 					<Col md={{ span: 6, offset: 6 }} className="text-right p-3">
+	// 						{item.rocket.rocket_name}
+	// 					</Col>
+	// 				</Row>
+	// 			</Container>
+	// 		</div>
+	// 	);
+	// };
 
 	return (
 		<div>
-			<Container fluid={true}>
-				<Row className="no-gutters">
-					<Col md={8} className="text-center p-3">
-						<Button
-							className="reloadBtn"
-							onClick={(e) => reloadList(e.target.value)}
-						>
-							Reload
+			<Container fluid={true} className="grid">
+				<Row>
+					<Col md={12}>
+						<Button className="reloadBtn" onClick={reloadList}>
+							Reload Data
+							<img
+								className="img"
+								src={refresh}
+								alt="reload icon"
+								aria-hidden="true"
+							/>
 						</Button>
 					</Col>
 				</Row>
 				<Row className="row">
-					<Col md={4} className="text-right p-1">
-						<Button
-							className="orderByYearBtn  btn "
-							// onClick={(e) => setSearchByYear(e.target.value)}
-							onKeyDown={(event) =>
-								event.key === 'Enter'
-									? setSearchByYear(event.target.value)
-									: null
-							}
-						>
-							Filter by Year :
-							<input className="inputBox" type="text" placeholder="year" />
+					<Col md={8} className=" ">
+						<Button className="orderByYearBtn">
+							Filter by Year
+							<img
+								className="img"
+								src={select}
+								alt="filter by year"
+								aria-hidden="true"
+							/>
 						</Button>
-						<Button
-							className="sortBtn  btn"
-							onClick={(e) => toggleSortListByDate(e.target.value)}
-						>
+
+						<Button className="sortBtn" onClick={toggleSortListByDate}>
 							Sort by date
+							<img
+								className="img"
+								src={sort}
+								alt="sort by date"
+								aria-hidden="true"
+							/>
 						</Button>
 					</Col>
 				</Row>
 				<Row>
 					<Col>
-						<ol>
-							{filterList.map((item, index) => (
-								<li key={index}>{listCard(item)}</li>
-							))}
-						</ol>
+						{filterList.map((item, index) => (
+							<div key={index}>{<ListCard index={index} item={item} />}</div>
+						))}
 					</Col>
 				</Row>
 			</Container>
