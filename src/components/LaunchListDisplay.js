@@ -14,7 +14,7 @@ export default function LaunchListDisplay() {
 	const [isLatestFirst, setIsLatestFirst] = useState(false);
 
 	useEffect(() => {
-		// fetch JSON API data ans save it inside array
+		// Fetch JSON API data ans save it inside array
 		fetchedAPI().then((listItems) => {
 			setList(listItems);
 			setFilteredList(listItems);
@@ -28,7 +28,7 @@ export default function LaunchListDisplay() {
 		});
 	};
 
-	// order list by year  - using filter method
+	// Order list by year  - using foreach and filter method
 	useEffect(() => {
 		let years = [];
 		list.forEach((item) => {
@@ -41,12 +41,10 @@ export default function LaunchListDisplay() {
 	}, [list]);
 
 	const getListByYear = (option) => {
-		setFilteredList(
-			option ? list.filter((item) => item.launch_year === option) : list
-		);
+		setFilteredList(list.filter((item) => item.launch_year === option));
 	};
 
-	// sort list by date - using sort method
+	// Sort list by date - using sort method
 	const toggleSortListByDate = () => {
 		const newSortedList = list;
 		if (!isLatestFirst) {
