@@ -26,6 +26,7 @@ export default function LaunchListDisplay() {
 	const reloadList = () => {
 		fetchedAPI().then((listItems) => {
 			setFilteredList(listItems);
+			setFilterYear(undefined);
 		});
 	};
 
@@ -56,7 +57,7 @@ export default function LaunchListDisplay() {
 		let newSortedList = list;
 
 		if(year) {
-			newSortedList = newSortedList.filter((item) => item.launch_year === year)
+			newSortedList = newSortedList.filter((item) => item.launch_year === year);
 		}
 
 		newSortedList.sort((a, b) => {
