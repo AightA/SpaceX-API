@@ -10,6 +10,7 @@ import sort from '../assets/icon/sort.png';
 export default function LaunchListDisplay() {
 	const [list, setList] = useState([]);
 	const [searchByYear, setSearchByYear] = useState([]);
+	const [filterYear, setFilterYear] = useState();
 	const [filterList, setFilteredList] = useState([]);
 	const [isLatestFirst, setIsLatestFirst] = useState(false);
 
@@ -40,27 +41,37 @@ export default function LaunchListDisplay() {
 		setSearchByYear(years);
 	}, [list]);
 
-	const getListByYear = (option) => {
-		setFilteredList(list.filter((item) => item.launch_year === option));
-	};
+	function getListByYear(option) {
+		filterAndSort(option, isLatestFirst);
+		setFilterYear(option);
+	}
 
 	// Sort list by date - using sort method
-	const toggleSortListByDate = () => {
-		const newSortedList = list;
+	function toggleSortListByDate() {
+		filterAndSort(filterYear, !isLatestFirst);
+		setIsLatestFirst(!isLatestFirst);
+	}
+
+	function filterAndSort(year, order) {
+		let newSortedList = list;
+
+		if(year) {
+			newSortedList = newSortedList.filter((item) => item.launch_year === year)
+		}
 
 		newSortedList.sort((a, b) => {
 			if (a.launch_date_utc < b.launch_date_utc) {
-				return isLatestFirst ? -1 : 1;
+				return order ? -1 : 1;
 			} else if(a.launch_date_utc > b.launch_date_utc) {
-				return isLatestFirst ? 1 : -1
+				return order ? 1 : -1
 			} else {
 				return 0;
 			}
 		})
 
-		setIsLatestFirst(!isLatestFirst);
 		setFilteredList(newSortedList);
-	};
+	}
+
 
 	return (
 		<div>
