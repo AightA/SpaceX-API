@@ -2,7 +2,7 @@ import React from 'react';
 import LeftSideDisplay from './components/LeftSideDisplay';
 import LaunchListDisplay from './components/LaunchListDisplay';
 import { Container, Row, Col } from 'react-bootstrap';
-import './App.css';
+import './styles/App.css';
 
 function App() {
 	return (
