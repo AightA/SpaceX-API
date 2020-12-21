@@ -49,12 +49,21 @@ export default function LaunchListDisplay() {
 	const toggleSortListByDate = () => {
 		const newSortedList = list;
 		if (!isLatestFirst) {
-			newSortedList.sort((a, b) => a.launch_date_utc < b.launch_date_utc);
 			setOrderList(['  Ascending']);
 		} else {
-			newSortedList.sort((a, b) => a.launch_date_utc > b.launch_date_utc);
 			setOrderList(['Descending']);
 		}
+
+		newSortedList.sort((a, b) => {
+			if (a.launch_date_utc < b.launch_date_utc) {
+				return isLatestFirst ? -1 : 1;
+			} else if(a.launch_date_utc > b.launch_date_utc) {
+				return isLatestFirst ? 1 : -1
+			} else {
+				return 0;
+			}
+		})
+
 		setIsLatestFirst(!isLatestFirst);
 		setFilteredList(newSortedList);
 	};
