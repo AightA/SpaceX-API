@@ -27,6 +27,7 @@ export default function LaunchListDisplay() {
 		fetchedAPI().then((listItems) => {
 			setFilteredList(listItems);
 			setFilterYear(undefined);
+			setIsLatestFirst(false);
 		});
 	};
 
@@ -62,9 +63,9 @@ export default function LaunchListDisplay() {
 
 		newSortedList.sort((a, b) => {
 			if (a.launch_date_utc < b.launch_date_utc) {
-				return order ? -1 : 1;
+				return order ? 1 : -1;
 			} else if(a.launch_date_utc > b.launch_date_utc) {
-				return order ? 1 : -1
+				return order ? -1 : 1
 			} else {
 				return 0;
 			}
@@ -93,7 +94,7 @@ export default function LaunchListDisplay() {
 						/>
 						<img className="img" src={select} alt="filter by year" />
 						<Button className="sortBtn" onClick={toggleSortListByDate}>
-							Sort {isLatestFirst ? 'Descending' : 'Ascending'}
+							Sort {isLatestFirst ? 'Ascending' : 'Descending'}
 							<img className="img" src={sort} alt="sort by date" />
 						</Button>
 					</Col>
