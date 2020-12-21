@@ -9,7 +9,6 @@ import sort from '../assets/icon/sort.png';
 
 export default function LaunchListDisplay() {
 	const [list, setList] = useState([]);
-	const [orderList, setOrderList] = useState(['Descending']);
 	const [searchByYear, setSearchByYear] = useState([]);
 	const [filterList, setFilteredList] = useState([]);
 	const [isLatestFirst, setIsLatestFirst] = useState(false);
@@ -48,11 +47,6 @@ export default function LaunchListDisplay() {
 	// Sort list by date - using sort method
 	const toggleSortListByDate = () => {
 		const newSortedList = list;
-		if (!isLatestFirst) {
-			setOrderList(['  Ascending']);
-		} else {
-			setOrderList(['Descending']);
-		}
 
 		newSortedList.sort((a, b) => {
 			if (a.launch_date_utc < b.launch_date_utc) {
@@ -87,7 +81,7 @@ export default function LaunchListDisplay() {
 						/>
 						<img className="img" src={select} alt="filter by year" />
 						<Button className="sortBtn" onClick={toggleSortListByDate}>
-							Sort {orderList}
+							Sort {isLatestFirst ? 'Descending' : 'Ascending'}
 							<img className="img" src={sort} alt="sort by date" />
 						</Button>
 					</Col>
