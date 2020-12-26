@@ -52,9 +52,9 @@
 }
 
 .reloadBtn {
-	left: 300px;
+	position: absolute;
+	right: 0;
 	margin-top: 25px;
-	position: relative;
 	border-top-left-radius: 20px !important;
 	border-bottom-left-radius: 20px !important;
 	background-color: #215184 !important;
@@ -81,19 +81,17 @@
 	margin-left: 3px;
 }
 .text {
-	position: relative;
-	font-size: x-large;
-	top: 20px;
-	left: -40px;
+	position: absolute;
+	font-size: 33px;
+	top: 10px;
+	left: 285px;
 }
 
 .imgSpaceX {
-	width: 50%;
 	height: 35px;
-	margin-top: 20px;
-	margin-left: -170px;
-	position: relative;
-	object-fit: contain;
+	top: 10px;
+	left: 30px;
+	position: absolute;
 }
 
 .imgLaunch {
