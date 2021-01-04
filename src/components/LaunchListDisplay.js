@@ -77,26 +77,22 @@ export default function LaunchListDisplay() {
 
 	return (
 		<div>
-			<Row className="row">
-				<Col md={8} className=" ">
-					<DropDownBtn
-						dropDownList={searchByYear}
-						selectedYearUpdated={getListByYear}
-					/>
-					<img className="img" src={select} alt="filter by year" />
-					<Button className="sortBtn" onClick={toggleSortListByDate}>
-						Sort {isLatestFirst ? 'Ascending' : 'Descending'}
-						<img className="img" src={sort} alt="sort by date" />
-					</Button>
-				</Col>
-			</Row>
-			<Row>
-				<Col>
-					{filterList.map((item, index) => (
-						<div key={index}>{<ListCard index={index} item={item} />}</div>
-					))}
-				</Col>
-			</Row>
+			{/*<Row className="row">*/}
+			{/*	<Col md={8} className=" ">*/}
+			{/*		<DropDownBtn*/}
+			{/*			dropDownList={searchByYear}*/}
+			{/*			selectedYearUpdated={getListByYear}*/}
+			{/*		/>*/}
+			{/*		<img className="img" src={select} alt="filter by year" />*/}
+			{/*		<Button className="sortBtn" onClick={toggleSortListByDate}>*/}
+			{/*			Sort {isLatestFirst ? 'Ascending' : 'Descending'}*/}
+			{/*			<img className="img" src={sort} alt="sort by date" />*/}
+			{/*		</Button>*/}
+			{/*	</Col>*/}
+			{/*</Row>*/}
+			{filterList.map((item, index) => (
+				<div key={index}>{<ListCard index={index} item={item} />}</div>
+			))}
 		</div>
 	);
 }

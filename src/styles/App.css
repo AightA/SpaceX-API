@@ -51,15 +51,6 @@
 	box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
 }
 
-.reloadBtn {
-	position: absolute;
-	right: 0;
-	margin-top: 25px;
-	border-top-left-radius: 20px !important;
-	border-bottom-left-radius: 20px !important;
-	background-color: #215184 !important;
-}
-
 .orderByYearBtn {
 	position: relative;
 	left: 205px !important;
@@ -81,26 +72,25 @@
 	margin-left: 3px;
 }
 .text {
-	position: absolute;
 	font-size: 33px;
-	top: 10px;
-	left: 285px;
-}
-
-.imgSpaceX {
-	height: 35px;
-	top: 10px;
-	left: 30px;
-	position: absolute;
-}
-
-.imgLaunch {
-	width: 90%;
-	height: 90%;
-	top: 120px;
+	line-height: 33px;
 	position: relative;
-	object-fit: contain;
+	left: -20px;
+	top: 8px;
 }
+
+
+.img-space-x {
+	height: 35px;
+}
+
+.reloadBtn {
+	margin-right: -15px;
+	border-top-left-radius: 20px !important;
+	border-bottom-left-radius: 20px !important;
+	background-color: #215184 !important;
+}
+
 .loading {
 	top: 300px;
 	right: 200px;

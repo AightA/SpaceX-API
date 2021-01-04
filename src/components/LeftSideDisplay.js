@@ -5,15 +5,11 @@ import launch from '../assets/img/launch-home.png';
 
 export default function LeftSideDisplay() {
 	return (
-		<Row>
-			<Col>
-				<img
-					className="imgLaunch"
-					src={launch}
-					alt="reload icon"
-					aria-hidden="true"
-				/>
-			</Col>
-		</Row>
+			<img
+				className="imgLaunch"
+				src={launch}
+				alt="reload icon"
+				aria-hidden="true"
+			/>
 	);
 }
