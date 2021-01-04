@@ -10,31 +10,14 @@ function App() {
 	return (
 		<div className="App">
 			<Container fluid={true}>
-				<Row className="no-gutters">
-					<Col xs="12" md="9">
-						<img
-							className="img-space-x float-md-left"
-							src={spaceX}
-							alt="reload icon"
-							aria-hidden="true"
-						/>
-						<div className="text float-md-left">LAUNCHES</div>
+				<Row>
+					<Col xs="12" lg="6">
+						<LeftSideDisplay />
 					</Col>
-					<Col xs="12" md="3">
-						<Button className="reloadBtn float-right" /*onClick={reloadList} */>
-							Reload Data
-							<img className="img" src={refresh} alt="reload icon" />
-						</Button>
+					<Col xs="12" lg="6">
+						<LaunchListDisplay />
 					</Col>
 				</Row>
-					<Row>
-						<Col>
-							<LeftSideDisplay />
-						</Col>
-						<Col>
-							<LaunchListDisplay />
-						</Col>
-					</Row>
 			</Container>
 		</div>
 	);
