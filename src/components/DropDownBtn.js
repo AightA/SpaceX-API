@@ -15,17 +15,15 @@ export default function DropDownBtn(props) {
 	});
 
 	return (
-		<div>
-			<Dropdown>
-				<Dropdown.Toggle
-					variant="Primary"
-					id="dropdown-basic"
-					className="orderByYearBtn"
-				>
-					Filter by year
-				</Dropdown.Toggle>
-				<Dropdown.Menu>{filteredDropDownBtn}</Dropdown.Menu>
-			</Dropdown>
-		</div>
+		<Dropdown>
+			<Dropdown.Toggle
+				variant="primary"
+				id="dropdown-basic"
+				className="orderByYearBtn"
+			>
+				Filter by year
+			</Dropdown.Toggle>
+			<Dropdown.Menu>{filteredDropDownBtn}</Dropdown.Menu>
+		</Dropdown>
 	);
 }

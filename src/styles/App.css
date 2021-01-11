@@ -51,84 +51,92 @@
 	box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
 }
 
-.reloadBtn {
-	left: 300px;
-	margin-top: 25px;
-	position: relative;
-	border-top-left-radius: 20px !important;
-	border-bottom-left-radius: 20px !important;
-	background-color: #215184 !important;
-}
-
-.orderByYearBtn {
-	position: relative;
-	left: 205px !important;
-	top: 78px !important;
-	background-color: #215184 !important;
-	color: white !important;
-}
-.sortBtn {
-	position: relative;
-	display: inline;
-	right: -350px;
-	margin-top: 40px;
-	background-color: #215184 !important;
-	width: 149px;
-	text-align: left !important;
+.btn.btn-primary.orderByYearBtn, .btn.btn-primary.sortBtn {
+	background-color: #215184;
+	text-align: left;
+	color: white;
+	float: right;
+	margin-right: 10px;
 }
 
 .img {
 	margin-left: 3px;
 }
-.text {
+.header-text {
+	font-size: 33px;
+	line-height: 33px;
 	position: relative;
-	font-size: x-large;
-	top: 20px;
-	left: -40px;
+	left: -20px;
+	top: 8px;
 }
 
-.imgSpaceX {
-	width: 50%;
+
+.img-space-x {
 	height: 35px;
-	margin-top: 20px;
-	margin-left: -170px;
-	position: relative;
-	object-fit: contain;
 }
 
-.imgLaunch {
-	width: 90%;
-	height: 90%;
-	top: 120px;
-	position: relative;
-	object-fit: contain;
+.btn.btn-primary.reloadBtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: #215184;
 }
+
 .loading {
 	top: 300px;
 	right: 200px;
 }
 
+.card {
+	padding: 15px
+}
+
+
 .orderNumber {
-	position: relative;
-	top: 25px;
-	font-size: x-large;
+	text-align: left;
+	font-size: xx-large;
+	margin-left: 10px;
+	font-weight: bold;
+	line-height: 3.5rem;
 }
 
 .missionName {
-	position: relative;
-	top: 25px;
-	font-size: x-large;
+	text-align: left;
+	font-size: xx-large;
+	margin-left: 40px;
+	font-weight: bold;
+	line-height: 3.5rem;
 }
 
 .launchDate {
-	position: relative;
-	top: -35px;
 	font-size: 17px;
-	left: 230px;
 }
 .rocketName {
-	position: relative;
-	top: -10px;
 	font-size: 20px;
-	left: 78px;
+	font-weight: bold;
+}
+
+.header-margin {
+	margin-top: 80px;
+}
+
+.x-center-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#rocket {
+	max-width: 100%;
+	margin-top: 80px;
+}
+
+.rockets-table {
+	height: 750px;
+	width: 100%;
+	padding: 0 20px 20px 20px;
+	margin-top: 40px;
+	overflow-y: scroll;
 }

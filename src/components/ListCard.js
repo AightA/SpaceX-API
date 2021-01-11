@@ -4,24 +4,25 @@ import moment from 'moment';
 
 const ListCard = ({ item, index }) => {
 	return (
-		<Container fluid={true}>
-			<Card className="cardBox">
-				<Row className="  no-gutters">
-					<Col md={1} className="orderNumber">
+		<Card className="cardBox">
+				<div>
+					<span className="orderNumber float-left">
 						#{index + 1}
-					</Col>
-					<Col md={4} className="missionName">
+					</span>
+					<span className="missionName float-left">
 						{item.mission_name}
-					</Col>
-					<Col md={{ span: 4, offset: 4 }} className="launchDate">
-						{moment(item.launch_date_utc).format('Do MMM YYYY') + ' '}
-					</Col>
-					<Col md={{ span: 6, offset: 6 }} className="rocketName">
-						{item.rocket.rocket_name}
-					</Col>
-				</Row>
-			</Card>
-		</Container>
+					</span>
+
+					<div className="float-right">
+						<div className="launchDate">
+							{moment(item.launch_date_utc).format('Do MMM YYYY') + ' '}
+						</div>
+						<div className="rocketName">
+							{item.rocket.rocket_name}
+						</div>
+					</div>
+				</div>
+		</Card>
 	);
 };
 export default ListCard;
